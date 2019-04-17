@@ -26,8 +26,7 @@
 
 <div class="container section">
     <div class="row">
-        <div class="col s12 m6"></div>
-        <div class="col s12 m5 push-m1">
+        <div class="col s12 m6">
             <div class="convas">
                 <form class="card z-depth-0">
                     <div class="card-content">
@@ -38,10 +37,10 @@
                         </div>
                         <div class="input-field">
                             <input type="text" id="cost">
-                            <label for="name">Item Name</label>
+                            <label for="name">Item Cost</label>
                         </div>
                         <div class="input-field center">
-                            <button class="btn-large pink white-text">Add Item</button>
+                            <button class="btn-large pink white-text waves-effect">Test</button>
                         </div>
                         <div class="input-field center">
                             <p class="red-text" id="error">test</p>
@@ -50,11 +49,29 @@
                 </form>
             </div>
         </div>
+        <div class="col s12 m5 push-m1">
+            <div class="canvas"></div>
+        </div>
     </div>
 </div>
 
 
 
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-firestore.js"></script>
+<script>
+    // Initialize Firebase
+    let config = {
+        apiKey: "AIzaSyB6ceMF54etByiK87eJIgOY8fFmoUfAovI",
+        authDomain: "udemy-d3-firebase-e5e05.firebaseapp.com",
+        databaseURL: "https://udemy-d3-firebase-e5e05.firebaseio.com",
+        projectId: "udemy-d3-firebase-e5e05",
+        storageBucket: "udemy-d3-firebase-e5e05.appspot.com",
+        messagingSenderId: "411750622051"
+    };
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.js"></script>
 <script src="index.js"></script>
