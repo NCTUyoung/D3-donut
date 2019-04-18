@@ -33,7 +33,12 @@ const arcPath = d3.arc()
 
 const colour = d3.scaleOrdinal(d3['schemeSet3']);
 
-
+const legendGroup = svg.append('g')
+    .attr('transform',`translate(${dim.width+40},10)`);
+const legend = d3.legendColor()
+    .shape('circle')
+    .shapePadding(10)
+    .scale(colour);
 
 
 //update function
@@ -41,7 +46,10 @@ const update = (data)=>{
 
     //update color domain
     colour.domain(data.map(item=>item.name));
-
+    //update legend group
+    legendGroup.call(legend);
+    legendGroup.selectAll('text')
+        .attr('fill','white')
 
 
 
